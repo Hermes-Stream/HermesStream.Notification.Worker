@@ -5,10 +5,12 @@ namespace HermesStream.Notification.Worker
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
+        private readonly IRabbitMqConsumer _consumer;
 
-        public Worker(ILogger<Worker> logger)
+        public Worker(ILogger<Worker> logger, IRabbitMqConsumer consumer)
         {
             _logger = logger;
+            _consumer = consumer;
         }
 
         [Obsolete]
@@ -18,7 +20,7 @@ namespace HermesStream.Notification.Worker
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
 
-                new RabbitMqConsumer().Consume();
+                 _consumer.Consume();
 
                 await Task.Delay(1000, stoppingToken);
             }
