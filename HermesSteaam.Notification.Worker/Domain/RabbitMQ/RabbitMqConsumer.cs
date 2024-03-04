@@ -1,8 +1,9 @@
-﻿using HermesStream.Notification.Worker.RabbitMQ;
+﻿using HermesSteaam.Notification.Worker.Services.Dtos;
+using Newtonsoft.Json;
 using RabbitMQ.Client;
 using System.Text;
 
-namespace HermesSteaam.Notification.Worker.RabbitMQ
+namespace HermesSteaam.Notification.Worker.Domain.RabbitMQ
 {
     public class RabbitMqConsumer : IDisposable, IRabbitMqConsumer
     {
@@ -33,9 +34,16 @@ namespace HermesSteaam.Notification.Worker.RabbitMQ
                 var body = basicDeliverEventArgs.Body;
                 var message = Encoding.UTF8.GetString(body) ?? string.Empty;
 
-                _logger.LogInformation("MSG: " + message, body);
+                try
+                {
+                    var notification = JsonConvert.DeserializeObject<Services.Dtos.Notification>(message);
+                    _logger.LogInformation("MSG: " + notification?.Message + " ID: " + notification?.NotificationId);
+                }
+                catch (JsonException ex)
+                {
+                    Console.WriteLine($"Error deserializing message: {ex.Message}");
+                }
 
-                // Processar a mensagem
 
                 _model.BasicAck(basicDeliverEventArgs.DeliveryTag, false);
             }

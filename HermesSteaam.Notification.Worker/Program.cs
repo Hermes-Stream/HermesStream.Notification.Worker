@@ -1,6 +1,6 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using HermesSteaam.Notification.Worker.RabbitMQ;
+using HermesSteaam.Notification.Worker.Domain.RabbitMQ;
 using HermesStream.Notification.Worker;
 
 IHost host = Host.CreateDefaultBuilder(args)

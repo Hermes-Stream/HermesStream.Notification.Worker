@@ -1,4 +1,4 @@
-﻿namespace HermesSteaam.Notification.Worker.RabbitMQ
+﻿namespace HermesSteaam.Notification.Worker.Domain.RabbitMQ
 {
     public interface IRabbitMqConsumer
     {

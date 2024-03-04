@@ -1,5 +1,5 @@
 ﻿using RabbitMQ.Client;
-namespace HermesStream.Notification.Worker.RabbitMQ
+namespace HermesSteaam.Notification.Worker.Domain.RabbitMQ
 {
     public class RabbitMqConnection
     {

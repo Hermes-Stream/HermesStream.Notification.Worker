@@ -1,4 +1,4 @@
-using HermesSteaam.Notification.Worker.RabbitMQ;
+using HermesSteaam.Notification.Worker.Domain.RabbitMQ;
 
 namespace HermesStream.Notification.Worker
 {
@@ -13,7 +13,6 @@ namespace HermesStream.Notification.Worker
             _consumer = consumer;
         }
 
-        [Obsolete]
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)

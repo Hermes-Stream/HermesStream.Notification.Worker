@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using HermesSteaam.Notification.Worker.RabbitMQ;
+using HermesSteaam.Notification.Worker.Domain.RabbitMQ;
 
 namespace HermesSteaam.Notification.Worker
 {
