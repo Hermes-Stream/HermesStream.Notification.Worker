@@ -1,3 +1,5 @@
+using HermesSteaam.Notification.Worker.RabbitMQ;
+
 namespace HermesStream.Notification.Worker
 {
     public class Worker : BackgroundService
@@ -9,11 +11,15 @@ namespace HermesStream.Notification.Worker
             _logger = logger;
         }
 
+        [Obsolete]
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+
+                new RabbitMqConsumer().Consume();
+
                 await Task.Delay(1000, stoppingToken);
             }
         }
