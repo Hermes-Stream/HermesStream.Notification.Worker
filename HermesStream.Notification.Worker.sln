@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HermesSteaam.Notification.Worker", "HermesSteaam.Notification.Worker\HermesSteaam.Notification.Worker.csproj", "{73DACE73-78A8-49C1-ADB1-9C2C65E6B0EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73DACE73-78A8-49C1-ADB1-9C2C65E6B0EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73DACE73-78A8-49C1-ADB1-9C2C65E6B0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73DACE73-78A8-49C1-ADB1-9C2C65E6B0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73DACE73-78A8-49C1-ADB1-9C2C65E6B0EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6BEB33AD-CEA4-4CD5-9038-91F5368B3519}
+	EndGlobalSection
+EndGlobal
